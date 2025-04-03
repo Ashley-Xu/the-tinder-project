@@ -1,2 +1,4 @@
 data/
-./venv
+.venv/
+scripts/deep/final
+scripts/deep/results
