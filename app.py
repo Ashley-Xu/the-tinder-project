@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
 import torch
-from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification
+from transformers import AutoTokenizer, DistilBertForSequenceClassification
 
 # Load the trained model and tokenizer
 @st.cache_resource
 def load_model():
     model = DistilBertForSequenceClassification.from_pretrained("Ashley-Xu/opening-line-strength-predictor")
-    tokenizer = DistilBertTokenizerFast.from_pretrained("Ashley-Xu/opening-line-strength-predictor")
+    tokenizer = AutoTokenizer.from_pretrained("Ashley-Xu/opening-line-strength-predictor")
     model.eval()  # Set to evaluation mode
     return model, tokenizer
 
