@@ -1,11 +1,70 @@
-# the-tinder-project
+# Tinder Conversational Length Predictor
 
-## App: allow users to input an opening line and potentially some of their profile info / the profile info of the person they are interested in, to generate a score (probability of a meaningful conversation)
+This project aims to predict the length of conversations based on users' opening lines and gender using various machine learning approaches. The project includes a Streamlit web application for user interaction and three different modeling approaches: naive, traditional, and deep learning.
 
-## Naive approach: OpenAI API, directly ask ChatGPT to rate an opening line based on my profile and the person of interest's profile
+## Table of Contents
 
-## ML approach: HMMs?
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Descriptions](#file-descriptions)
+  - [app.py](#apppy)
+  - [naive/model.py](#naivemodelpy)
+  - [traditional/model.py](#traditionalmodelpy)
+  - [deep/model.py](#deepmodelpy)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Deep Learning Approach: prompt engineering or/and fine-tuning 
+## Installation
 
-## Evaluation: since the output is a probability, we can use traditional train/test split
+To set up the project, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
+   ```
+
+2. Create a virtual environment:
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+   ```
+
+3. Install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+To run the Streamlit application, execute the following command:
+    ```bash
+    streamlit run app.py
+    ```
+
+This will start the web application, allowing users to input their opening lines and gender to predict the conversational length.
+
+## File Descriptions
+
+### app.py
+
+This file contains the Streamlit web application that serves as the user interface for the conversational length predictor. Users can input their opening line and select their gender to receive a prediction of the conversation length based on the trained models.
+
+### naive/model.py
+
+This file implements a naive approach using a pre-trained DistilBERT model without fine-tuning. It loads the dataset, encodes the gender, generates embeddings using DistilBERT, and trains a linear regression model to predict the conversational length. The model is evaluated using RMSE (Root Mean Squared Error).
+
+### traditional/model.py
+
+This file implements a traditional machine learning approach using a Random Forest classifier. It loads the dataset, preprocesses the data, and trains the model using various features. The model's performance is evaluated using classification metrics and RMSE.
+
+### deep/model.py
+
+This file implements a deep learning approach using a fine-tuned DistilBERT model for sequence classification. It loads the dataset, tokenizes the input, and trains the model using the Hugging Face Transformers library. The model is evaluated using RMSE, and the training process is managed with the Trainer API.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
