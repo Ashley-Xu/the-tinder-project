@@ -2,17 +2,7 @@
 
 This project aims to predict the length of conversations based on users' opening lines and gender using various machine learning approaches. The project includes a Streamlit web application for user interaction and three different modeling approaches: naive, traditional, and deep learning.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [File Descriptions](#file-descriptions)
-  - [app.py](#apppy)
-  - [naive/model.py](#naivemodelpy)
-  - [traditional/model.py](#traditionalmodelpy)
-  - [deep/model.py](#deepmodelpy)
-- [Contributing](#contributing)
-- [License](#license)
+A user-friendly web interface for the recommender system is available at: https://ashley-xu-the-tinder-project-app-dev-raysbj.streamlit.app/
 
 ## Installation
 
@@ -40,12 +30,23 @@ To set up the project, follow these steps:
 
 ## Usage
 
-To run the Streamlit application, execute the following command:
+To run the Streamlit application locally, execute the following command:
     ```bash
     streamlit run app.py
     ```
 
 This will start the web application, allowing users to input their opening lines and gender to predict the conversational length.
+
+
+## Data Collection and Handling
+
+This project analyzes Tinder conversation data with strict adherence to privacy and ethical guidelines:
+
+- All personal identifiers (names, contact information, locations) have been removed from messages
+- No raw conversation data is published online
+- Aggregated insights and models are presented without connection to individual users
+- Data is stored securely with access limited to authorized researchers only (Dr. Bent via Google Drive)
+
 
 ## File Descriptions
 
@@ -55,15 +56,31 @@ This file contains the Streamlit web application that serves as the user interfa
 
 ### naive/model.py
 
-This file implements a naive approach using a pre-trained DistilBERT model without fine-tuning. It loads the dataset, encodes the gender, generates embeddings using DistilBERT, and trains a linear regression model to predict the conversational length. The model is evaluated using RMSE (Root Mean Squared Error).
+This file implements a naive approach using a pre-trained DistilBERT model without fine-tuning. It loads the dataset, generates embeddings for messages using DistilBERT, and trains a linear regression model to predict the conversational length. The model is evaluated using RMSE (Root Mean Squared Error).
 
 ### traditional/model.py
 
-This file implements a traditional machine learning approach using a Random Forest classifier. It loads the dataset, preprocesses the data, and trains the model using various features. The model's performance is evaluated using classification metrics and RMSE.
+This file implements a traditional machine learning approach using a Random Forest classifier. It loads the dataset, preprocesses the data, and trains the model using various features such as "message", "gender_encoded", "Opener Length", "Basic Opener","Gif Opener", "question", "Pickup Line". 
 
 ### deep/model.py
 
 This file implements a deep learning approach using a fine-tuned DistilBERT model for sequence classification. It loads the dataset, tokenizes the input, and trains the model using the Hugging Face Transformers library. The model is evaluated using RMSE, and the training process is managed with the Trainer API.
+
+
+## Evaluation
+
+The system is evaluated using Root Mean Square Error (RMSE) as the primary metric. RMSE is chosen because:
+- It penalizes larger errors more heavily than smaller ones
+- It's in the same units as the output target (conversation length)
+- It's widely used in regression tasks
+- It provides an intuitive measure of prediction accuracy
+
+### Evaluation Results
+**Naive Approach:** 11.05 RMSE
+
+**Deep Learning Approach:** 10.38 RMSE
+
+**Traditional Approach:** 10.41 RMSE
 
 ## License
 
