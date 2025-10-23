@@ -65,6 +65,22 @@ This file implements a traditional machine learning approach using a Random Fore
 ### deep/model.py
 
 This file implements a deep learning approach using a fine-tuned DistilBERT model for sequence classification. It loads the dataset, tokenizes the input, and trains the model using the Hugging Face Transformers library. The model is evaluated using RMSE, and the training process is managed with the Trainer API.
+The deep learning model is hosted on huggingface: https://huggingface.co/Ashley-Xu/opening-line-strength-predictor
+
+## Evaluation
+
+The system is evaluated using Root Mean Square Error (RMSE) as the primary metric. RMSE is chosen because:
+- It penalizes larger errors more heavily than smaller ones
+- It's in the same units as the output target (conversation length)
+- It's widely used in regression tasks
+- It provides an intuitive measure of prediction accuracy
+
+### Evaluation Results
+**Naive Approach:** 11.05 RMSE
+
+**Deep Learning Approach:** 10.38 RMSE
+
+**Traditional Approach:** 10.41 RMSE
 
 
 ## Evaluation
@@ -85,3 +101,4 @@ The system is evaluated using Root Mean Square Error (RMSE) as the primary metri
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+

@@ -1,0 +1,158 @@
+/* Tinder Project Custom Styling */
+
+/* Main color theme from presentation */
+:root {
+    --primary-purple: #9333EA;
+    --secondary-pink: #D946A6;
+    --light-purple: #E9D5FF;
+    --light-pink: #FCE7F3;
+    --background-light: #FAF5FF;
+    --text-dark: #1F2937;
+}
+
+/* Background gradient - matching the light purple/lavender from the illustrations */
+.stApp {
+    background: linear-gradient(135deg, #E5D9F2 0%, #E8DFF5 50%, #EDE4F8 100%);
+}
+
+/* Main title styling */
+h1 {
+    color: var(--primary-purple) !important;
+    font-weight: 800 !important;
+    font-size: 3.5rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Subtitle styling */
+.subtitle {
+    color: #1F2937;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 1;
+}
+
+/* Input text area styling */
+.stTextArea textarea {
+    border: 3px solid var(--secondary-pink) !important;
+    border-radius: 15px !important;
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+    background-color: white !important;
+}
+
+/* Button styling */
+.stButton button {
+    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-pink) 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 0.75rem 3rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4) !important;
+}
+
+/* Success message styling */
+.success-box {
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+    border: 2px solid #10B981;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.success-box h2 {
+    color: #059669 !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+/* Info box styling */
+.info-box {
+    background: white;
+    border: 2px solid var(--light-purple);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 10px rgba(147, 51, 234, 0.1);
+    color: #1F2937;
+}
+
+/* Heart decorations */
+.heart {
+    color: var(--secondary-pink);
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Container styling */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    color: #1F2937;
+    opacity: 1;
+}
+
+/* Label styling */
+label {
+    font-weight: 600 !important;
+    color: var(--primary-purple) !important;
+    font-size: 1.1rem !important;
+}
+
+/* Metric styling */
+.metric-container {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(147, 51, 234, 0.1);
+    border: 2px solid var(--light-pink);
+}
+
+/* General text color overrides for readability */
+p, div, span, li {
+    color: #1F2937 !important;
+}
+
+/* Streamlit default text */
+.stMarkdown {
+    color: #1F2937 !important;
+}
+
+/* Expander content */
+.streamlit-expanderContent {
+    color: #1F2937 !important;
+}
+
+/* Headers */
+h2, h3, h4, h5, h6 {
+    color: #1F2937 !important;
+}
+
+/* Warning and info messages */
+.stAlert {
+    color: #1F2937 !important;
+}
