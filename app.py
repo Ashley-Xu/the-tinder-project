@@ -170,7 +170,7 @@ def main():
     # Footer
     st.markdown('''
     <div class="footer">
-        <p>💜 Built with Streamlit and Transformers | Model: Ashley-Xu/opening-line-strength-predictor 💗</p>
+        <p>💜 Built with Streamlit and Transformers | Model: https://huggingface.co/Ashley-Xu/opening-line-strength-predictor 💗</p>
         <p style="font-size: 0.9rem; margin-top: 0.5rem;">
             This tool is for educational purposes. All training data was anonymized and ethically collected.
         </p>
